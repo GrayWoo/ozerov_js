@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework</title>
+  </head>
+  <body>
+    <!--
 Обязательное задание.
 
 Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
@@ -29,10 +29,67 @@ Infinity делать не нужно, однако, в случае если б
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+    <script>
+      "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
-</body>
+      /**
+       * Сумма переданных аргументов.
+       * @param {number} a - Первое число.
+       * @param {number} b - Второе число.
+       * @return {number} Результат суммы чисел.
+       */
+      const sum = (a, b) => a + b;
+
+      /**
+       * Вычитание переданных аргументов.
+       * @param {number} a - Первое число.
+       * @param {number} b - Второе число.
+       * @return {number} Результат вычитания чисел.
+       */
+      const diff = (a, b) => (a > b ? a - b : b - a);
+
+      /**
+       * Произведение переданных аргументов.
+       * @param {number} a - Первое число.
+       * @param {number} b - Второе число.
+       * @return {number} Результат произведения чисел.
+       */
+      const multi = (a, b) => a * b;
+
+      /**
+       * Деление переданных аргументов.
+       * @param {number} a - Первое число.
+       * @param {number} b - Второе число.
+       * @return {number} Результат деления чисел.
+       */
+      const division = (a, b) => a / b;
+
+      /**
+      * Вычисляет операцию, переданную в третий параметр между двумя первыми
+      * аргументами функции.
+      * @param {number} arg1 - Первое число.
+      * @param {number} arg2 - Второе число.
+      * @param {string} operation - Операция, одна из возможных строк:
+      * "+", "-", "*", "/".
+      * @return {number} Результат операции operation над первыми двумя аргументами
+      * функции. Может вернуть NaN, если operation или первые два аргумента заданы
+      * неверно.
+      */
+      const mathOperation = (arg1, arg2, operation) => {
+        switch (operation) {
+          case "+":
+            return sum(arg1, arg2);
+          case "-":
+            return diff(arg1, arg2);
+          case "*":
+            return multi(arg1, arg2);
+          case "/":
+            return division(arg1, arg2);
+
+          default:
+            return NaN;
+        }
+      };
+    </script>
+  </body>
 </html>
